@@ -24,5 +24,32 @@ namespace dotnet_lab13
         {
             InitializeComponent();
         }
+
+        private void miIzlaz_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void miPregledaj_Click(object sender, RoutedEventArgs e)
+        {
+
+            Window1 noviProzor = new Window1();
+
+            TextRange tekst = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+            noviProzor.pregledTekst.Text = tekst.Text;
+            noviProzor.ShowDialog();
+        }
+
+        private void btnIzbrisi_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange tekst = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+            tekst.Text = "";
+        }
+
+        private void btnPonovi_Click(object sender, RoutedEventArgs e)
+        {
+            TextRange tekst = new TextRange(richTextBox.Document.ContentStart, richTextBox.Document.ContentEnd);
+            tekst.Text += tekst.Text;
+        }
     }
 }

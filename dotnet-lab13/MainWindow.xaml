@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:dotnet_lab13"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="581*"/>
+            <ColumnDefinition Width="211*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel HorizontalAlignment="Left" Height="61" LastChildFill="False" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="2">
+            <Button x:Name="button2" Height="30" VerticalAlignment="Top" Width="90" >
+                <Menu x:Name="menu" Height="100" Width="100" VerticalAlignment="Top">
+                    <MenuItem Header="Izbornik" RenderTransformOrigin="0.83,0.917" Height="22" Width="66" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <MenuItem Header="Pregled unosa" Click="miPregledaj_Click"/>
+                        <Separator HorizontalAlignment="Left" Height="1" Width="161"/>
+                        <MenuItem Header="Izlaz" Click="miIzlaz_Click"/>
+                    </MenuItem>
+                </Menu>
+            </Button>
+        </DockPanel>
+        <WrapPanel HorizontalAlignment="Left" Height="72" Margin="0,347,0,0" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="2">
+            <Button x:Name="btnIzbrisi" Content="Izbrisi tekst" Width="75" Margin="20" Click="btnIzbrisi_Click"/>
+            <Button x:Name="btnPonovi" Content="Ponovi tekst" Width="114" Margin="0,20,20,20" Click="btnPonovi_Click"/>
+        </WrapPanel>
+        <RichTextBox x:Name="richTextBox" HorizontalAlignment="Left" Height="311" Margin="0,31,0,0" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="2">
+            <FlowDocument>
+                <Paragraph FontSize="18" Foreground="Gray">
+                    Ovo je Flow doc pripremljen za editiranje u RTB!
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
     </Grid>
 </Window>
